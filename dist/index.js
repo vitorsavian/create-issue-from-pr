@@ -17,10 +17,10 @@ module.exports = eval("require")("@actions/github");
 
 /***/ }),
 
-/***/ 644:
+/***/ 822:
 /***/ ((module) => {
 
-module.exports = eval("require")("@ocktokit/rest");
+module.exports = eval("require")("@ocktokit/core");
 
 
 /***/ })
@@ -68,7 +68,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(714)
 const github = __nccwpck_require__(735)
-const { Octokit } = __nccwpck_require__(644)
+const { Octokit } = __nccwpck_require__(822)
 
 async function run() {
   try {
