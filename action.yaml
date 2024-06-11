@@ -1,0 +1,27 @@
+name: "Create Issue"
+description: "Create a issue from a PR"
+inputs:
+  project:
+    description: 'Project name'
+    required: true
+  token:
+    description: 'Github token'
+    required: true
+  org:
+    description: 'Organization name'
+    required: true
+  team:
+    description: 'Team name'
+    required: true
+  title:
+    description: 'Issue title'
+    required: true
+  body:
+    description: 'Issue body'
+    required: true
+  user:
+    description: 'User that made the PR'
+    required: true
+runs:
+  using: 'node20'
+  main: 'index.js'
