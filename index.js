@@ -1,6 +1,5 @@
-const core = require('@actions/core')
-const github = require('@actions/github')
-const { Octokit } = require('@ocktokit/core')
+import * as core from '@actions/core';
+import { Octokit } from "octokit";
 
 async function run() {
   try {
@@ -40,4 +39,8 @@ async function run() {
   }
 }
 
-run()
+try {
+  run()
+} catch (err) {
+  core.setFailed(err.message);
+}
