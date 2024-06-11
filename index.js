@@ -13,19 +13,20 @@ async function run() {
     const user = core.getInput('user');
     const octokit = new Octokit({ auth: token });
 
-    const { data: teamMembers } = await octokit.teams.listMembersInOrg({
+    const result = await octokit.request('GET /orgs/{org}/members/{username}', {
       org: org,
-      team_slug: team
-    });
+      username: user,
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    })
 
-    const userInTeam = teamMembers.some(member => member.login === user);
-
-    if (userInTeam) {
+    if (result.status == 204) {
       console.log(`${user} is in the team ${team}.`);
     } else {
       console.log(`${user} not in the team ${team}. Creating issue...`);
 
-      await octokit.issues.create({
+      await octokit.request('POST /repos/{owner}/{repo}/issues', {
         owner: org,
         repo: project,
         title: issueTitle,
