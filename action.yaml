@@ -1,5 +1,5 @@
-name: "Create Issue"
-description: "Create a issue from a PR"
+name: "Create issue from a PR"
+description: "This action helps open source devs in the track of new PRs"
 inputs:
   project:
     description: 'Project name'
