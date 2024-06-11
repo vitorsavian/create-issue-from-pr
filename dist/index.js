@@ -82,7 +82,7 @@ async function run() {
     const octokit = new Octokit({ auth: token });
 
     const result = await octokit.request('GET /orgs/{org}/members/{username}', {
-      org: org,
+      org: team,
       username: user,
       headers: {
         'X-GitHub-Api-Version': '2022-11-28'
