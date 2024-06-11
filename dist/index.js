@@ -42964,7 +42964,7 @@ async function run() {
     const user = core.getInput('user');
     const octokit = new dist_bundle_Octokit({ auth: token });
 
-    const result = await octokit.request('GET /orgs/{org}/members/{username}', {
+    const result = await octokit.request('GET /orgs/{org}/public_members/{username}', {
       org: team,
       username: user,
       headers: {
@@ -42991,11 +42991,7 @@ async function run() {
   }
 }
 
-try {
-  run()
-} catch (err) {
-  core.setFailed(err.message);
-}
+run()
 
 })();
 
