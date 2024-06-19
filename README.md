@@ -4,9 +4,9 @@ This action creates a issue from a PR to help opensource devs track new PRs.
 
 ## Inputs
 
-### `project`
+### `repo`
 
-**Required** The name of the project to create the issue.
+**Required** The name of the repository to create the issue.
 
 ### `token`
 
@@ -15,10 +15,6 @@ This action creates a issue from a PR to help opensource devs track new PRs.
 ### `org`
 
 **Required** The org name to create the issue in the project.
-
-### `team`
-
-**Required** The team to search for the user.
 
 ### `title`
 
