@@ -43011,14 +43011,14 @@ async function run() {
   const github = new CreateIssueFromPR(token);
 
   console.log(`Checking if the ${user} have membership in ${org}.`);
-  let { err } = github.checkMembership(org, user);
+  let { err } = await github.checkMembership(org, user);
   if (err == undefined) {
     return
   }
 
   if (err.status == 302 || err.status == 404) {
-    console.log(`${user} not found as a public member of the ${team}. Creating issue...`);
-    let { err } = github.createIssue(org, repo, title, body)
+    console.log(`${user} not found as a public member of the ${org}. Creating issue...`);
+    let { err } = await github.createIssue(org, repo, title, body)
     if (err != undefined) {
       core.setFailed(err.message)
     }
