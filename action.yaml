@@ -1,17 +1,14 @@
 name: "Create issue from a PR"
 description: "This action helps open source devs in the track of new PRs"
 inputs:
-  project:
-    description: 'Project name'
+  repo:
+    description: 'Repository name'
     required: true
   token:
     description: 'Github token'
     required: true
   org:
     description: 'Organization name'
-    required: true
-  team:
-    description: 'Team name'
     required: true
   title:
     description: 'Issue title'
